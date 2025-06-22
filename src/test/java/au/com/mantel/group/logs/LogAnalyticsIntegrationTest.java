@@ -23,7 +23,7 @@ class LogAnalyticsIntegrationTest extends BaseIntegrationTest {
         .then()
                 .statusCode(200)
         .and()
-                .body("results.noOfUniqueIpAddresses", equalTo(12))
+                .body("results.noOfUniqueIpAddresses", equalTo(11))
         .and()
                 .body("results.mostFrequentIpAddress.size()", equalTo(3))
                 .body("results.mostFrequentIpAddress[0].ipAddress", equalTo("168.41.191.40"))
@@ -34,11 +34,11 @@ class LogAnalyticsIntegrationTest extends BaseIntegrationTest {
                 .body("results.mostFrequentIpAddress[2].occurrences", equalTo(3))
         .and()
                 .body("results.mostVisitedUrls.size()", equalTo(3))
-                .body("results.mostVisitedUrls[0].endpoint", equalTo("- "))
+                .body("results.mostVisitedUrls[0].endpoint", equalTo("GET /docs/manage-websites/"))
                 .body("results.mostVisitedUrls[0].occurrences", equalTo(2))
-                .body("results.mostVisitedUrls[1].endpoint", equalTo("GET /docs/manage-websites/"))
-                .body("results.mostVisitedUrls[1].occurrences", equalTo(2))
-                .body("results.mostVisitedUrls[2].endpoint", equalTo("GET /intranet-analytics/"))
+                .body("results.mostVisitedUrls[1].endpoint", equalTo("GET /intranet-analytics/"))
+                .body("results.mostVisitedUrls[1].occurrences", equalTo(1))
+                .body("results.mostVisitedUrls[2].endpoint", equalTo("GET /this/page/does/not/exist/"))
                 .body("results.mostVisitedUrls[2].occurrences", equalTo(1));
 
         // @formatter:on

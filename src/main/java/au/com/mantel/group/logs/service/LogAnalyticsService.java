@@ -1,6 +1,5 @@
 package au.com.mantel.group.logs.service;
 
-import au.com.mantel.group.logs.api.LogAnalyticsController;
 import au.com.mantel.group.logs.service.analysis.LogAnalyser;
 import au.com.mantel.group.logs.api.model.LogAnalyticsResponse;
 import au.com.mantel.group.logs.api.model.LogEntry;
@@ -23,6 +22,7 @@ import java.util.stream.Collectors;
 public class LogAnalyticsService {
 
     private static final Logger logger = LoggerFactory.getLogger(LogAnalyticsService.class);
+    public static final String UNKNOWN_LOG_LINE = "unknown";
 
 
     private LogParser logParser;
@@ -39,6 +39,7 @@ public class LogAnalyticsService {
         return filePart.content()
                 .flatMap(LogAnalyticsService::readLogLines)
                 .map(logParser::parse)
+                .filter(logline -> logline.ipAddress() != UNKNOWN_LOG_LINE)
                 .collectList()
                 .map(this::runAnalytics);
     }

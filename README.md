@@ -16,6 +16,11 @@ features, virus scanning, or error handling.
 - Validations
 - Security
 
+### Tech Improvements
+
+- Add test coverage
+- Separate unit and integration tests
+
 ---
 
 ## 🛠️ Tech Stack
@@ -37,7 +42,7 @@ features, virus scanning, or error handling.
 
 ## Build and Run using local
 
-#### local dev end
+#### local dev
 
 ```bash
 ./gradlew clean build
@@ -78,18 +83,18 @@ curl -X POST http://localhost:8080/api/analytics/logs \
         "occurrences": 3
       }
     ],
-    "noOfUniqueIpAddresses": 12,
+    "noOfUniqueIpAddresses": 11,
     "mostVisitedUrls": [
-      {
-        "endpoint": "- ",
-        "occurrences": 2
-      },
       {
         "endpoint": "GET /docs/manage-websites/",
         "occurrences": 2
       },
       {
         "endpoint": "GET /intranet-analytics/",
+        "occurrences": 1
+      },
+      {
+        "endpoint": "GET /this/page/does/not/exist/",
         "occurrences": 1
       }
     ]
