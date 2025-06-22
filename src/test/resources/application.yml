@@ -1,0 +1,10 @@
+spring.application.name: log-analytics-service
+
+logging:
+  level:
+    root: INFO
+    au.com.mantel.group.logs: DEBUG  # Set your package logging level
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/log-analytics.log
