@@ -1,4 +1,4 @@
-package au.com.mantel.group.logs.api.model;
+package au.com.mantel.group.logs.model;
 
 import java.util.Map;
 

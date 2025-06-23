@@ -1,6 +1,6 @@
 package au.com.mantel.group.logs.api;
 
-import au.com.mantel.group.logs.api.model.LogAnalyticsResponse;
+import au.com.mantel.group.logs.model.LogAnalyticsResponse;
 import au.com.mantel.group.logs.service.LogAnalyticsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

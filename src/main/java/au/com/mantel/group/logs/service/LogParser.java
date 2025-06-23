@@ -1,6 +1,6 @@
 package au.com.mantel.group.logs.service;
 
-import au.com.mantel.group.logs.api.model.LogEntry;
+import au.com.mantel.group.logs.service.analysis.model.LogEntry;
 import org.springframework.stereotype.Component;
 
 import java.util.regex.Matcher;
@@ -36,7 +36,7 @@ public class LogParser {
         Matcher matcher = LOG_PATTERN.matcher(line);
 
         if (!matcher.matches()) {
-            return LogEntry.invalid("unknown");
+            return LogEntry.invalid();
         }
 
         var ip = matcher.group("ip");
