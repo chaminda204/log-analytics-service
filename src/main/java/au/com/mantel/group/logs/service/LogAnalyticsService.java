@@ -1,8 +1,8 @@
 package au.com.mantel.group.logs.service;
 
 import au.com.mantel.group.logs.service.analysis.LogAnalyser;
-import au.com.mantel.group.logs.api.model.LogAnalyticsResponse;
-import au.com.mantel.group.logs.api.model.LogEntry;
+import au.com.mantel.group.logs.model.LogAnalyticsResponse;
+import au.com.mantel.group.logs.service.analysis.model.LogEntry;
 import au.com.mantel.group.logs.service.analysis.model.LogAnalysisResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,7 +39,7 @@ public class LogAnalyticsService {
         return filePart.content()
                 .flatMap(LogAnalyticsService::readLogLines)
                 .map(logParser::parse)
-                .filter(logline -> logline.ipAddress() != UNKNOWN_LOG_LINE)
+                .filter(logline -> logline.isValid())
                 .collectList()
                 .map(this::runAnalytics);
     }

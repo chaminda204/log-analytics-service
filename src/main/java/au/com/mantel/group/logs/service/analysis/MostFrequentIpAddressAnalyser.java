@@ -1,6 +1,6 @@
 package au.com.mantel.group.logs.service.analysis;
 
-import au.com.mantel.group.logs.api.model.LogEntry;
+import au.com.mantel.group.logs.service.analysis.model.LogEntry;
 import au.com.mantel.group.logs.service.analysis.model.LogAnalysisResult;
 import au.com.mantel.group.logs.service.analysis.model.MostFrequentIpAddressAnalysisResult;
 import org.springframework.stereotype.Component;

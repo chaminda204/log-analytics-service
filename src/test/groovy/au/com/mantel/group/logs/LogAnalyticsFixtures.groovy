@@ -1,7 +1,7 @@
 package au.com.mantel.group.logs
 
-import au.com.mantel.group.logs.api.model.LogAnalyticsResponse
-import au.com.mantel.group.logs.api.model.LogEntry
+import au.com.mantel.group.logs.model.LogAnalyticsResponse
+import au.com.mantel.group.logs.service.analysis.model.LogEntry
 
 trait LogAnalyticsFixtures {
 

@@ -16,10 +16,22 @@ features, virus scanning, or error handling.
 - Validations
 - Security
 
-### Tech Improvements
+### Assumptions and comments
+This exercise is intended to demonstrate coding skills, including a focus on:
+- ✅ Clean code principles
+- ✅ SOLID design
+- ✅ Testable and modular architecture
 
-- Add test coverage
-- Separate unit and integration tests
+To keep the solution concise and focused on core functionality, non-functional requirements such as the following were intentionally out of scope for this MVP:
+- ❌ Virus scanning or content-based security checks
+- ❌ Authentication/authorization or input sanitization
+- ❌ Robust global error handling (e.g., via @ControllerAdvice)
+- ❌ File validations such as:
+        Empty file uploads
+        Oversized files
+        Unsupported file extensions
+
+These aspects would need to be addressed in a production-ready version.
 
 ---
 
